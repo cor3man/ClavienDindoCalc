@@ -28,7 +28,12 @@ function drawChart() {
     //options: options,
   });
 
-  //chart.destroy();
+  document.querySelector("#header").innerHTML = 'Dla podanego pacjenta, prawdopodobienstwo wystapienia powiklan wynosi:';
+  document.querySelector("#clavien1").innerHTML = 'Clavien Dindo 1 = ' + probs[0] + '%';
+  document.querySelector("#clavien2").innerHTML = 'Clavien Dindo 2 = ' + probs[1] + '%';
+  document.querySelector("#clavien3").innerHTML = 'Clavien Dindo 3 = ' + probs[2] + '%';
+  document.querySelector("#clavien4").innerHTML = 'Clavien Dindo 4 = ' + probs[3] + '%';
+  document.querySelector("#clavien5").innerHTML = 'Clavien Dindo 5 = ' + probs[4] + '%';
 }
 
 function calcProbabilities() {
@@ -53,7 +58,7 @@ function calcProbabilities() {
     1 - clProbs[3]
   ];
 
-  return probs;
+  return probs.map(probs => (probs * 100).toFixed(1));
 } 
 
 function clavienProbability(b1, inputData) {

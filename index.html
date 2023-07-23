@@ -16,18 +16,31 @@
 </head>
 <body>
 
-<label for="ucs-input">USC:</label>
-<input type="number" id="ucs-input" min="0" max="1" value="0">
+<label for="ucs-input">Odprowadzenie moczu:</label>
+<select type="number" id="ucs-input">
+  <option value=1>Ureterocutaneostomia</option>
+  <option value=0>Inne</option>
+</select>
+<!--<input type="number" id="ucs-input" min="0" max="1" value="0">-->
 <br>
-<label for="hgb-input">HGB start:</label>
-<input type="number" id="hgb-input" min="0" max="40" value="10">
+<label for="hgb-input">Hemoglobina poczatkowa (5-20):</label>
+<input type="number" id="hgb-input" min="5" max="20" value="10">
 <br>
-<label for="cci-input">CCI:</label>
-<input type="number" id="cci-input" min="0" max="10" value="3">
+<label for="cci-input">Wynik CCI (0-37):</label>
+<input type="number" id="cci-input" min="0" max="37" value="3">
 <br>
 
-<button onclick="drawChart()">Oceń ryzyko</button>
+<button onclick="drawChart()">Oceń prawdopodobienstwo</button>
 <br>
+
+<div>
+  <div id="header"></div>
+  <div id="clavien1"></div>
+  <div id="clavien2"></div>
+  <div id="clavien3"></div>
+  <div id="clavien4"></div>
+  <div id="clavien5"></div>
+</div>
 
 <div id="chart-wrapper">
   <canvas id="clavienChart"></canvas>
@@ -36,6 +49,9 @@
 <!--<canvas id="myChart" width="400" height="400"></canvas>-->
 
 <!-- Link to the external JavaScript file -->
+
 <script src="script.js"></script>
+
+
 </body>
 </html>
