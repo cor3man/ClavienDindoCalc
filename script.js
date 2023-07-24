@@ -24,8 +24,19 @@ function drawChart() {
   const chart = new Chart(ctx, {
     type: "line",
     data: data,
-    config: config
-    //options: options,
+    config: config,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      aspectRatio: 1,
+      scales: {
+        y: {
+          ticks: {
+            callback: value => `${value}%`
+          }
+        }
+      }
+    }
   });
 
   document.querySelector("#header").innerHTML = 'Dla podanego pacjenta, prawdopodobienstwo wystapienia powiklan wynosi:';
