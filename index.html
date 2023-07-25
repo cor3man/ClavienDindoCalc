@@ -1,60 +1,53 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title>Przykład wykresu z osiami i linią przez punkty</title>
-
-  <style>
+  <title>Kalkulator oceny ryzyka wysapienia powiklan po cystektomii radykalnej z asysta robota</title>
+<!--   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+ -->  
+ <style>
     #chart-wrapper {
       display: inline-block;
       position: relative;
       width: 50%;
     }
   </style>
-
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </head>
+
 <body>
-
-<h1>Kalkulator oceny ryzyka wysapienia powiklan po cystektomii radykalnej z asysta robota</h1>
-<br>
-
-<label for="ucs-input">Odprowadzenie moczu:</label>
-<select type="number" id="ucs-input">
-  <option value=1>Ureterocutaneostomia</option>
-  <option value=0>Inne</option>
-</select>
-<!--<input type="number" id="ucs-input" min="0" max="1" value="0">-->
-<br>
-<label for="hgb-input">Hemoglobina poczatkowa (5-20):</label>
-<input type="number" id="hgb-input" min="5" max="20" value="10">
-<br>
-<label for="cci-input">Wynik CCI (0-37):</label>
-<input type="number" id="cci-input" min="0" max="37" value="3">
-<br>
-
-<button onclick="drawChart()">Oceń prawdopodobienstwo</button>
-<br>
-
-<div>
-  <div id="header"></div>
-  <div id="clavien1"></div>
-  <div id="clavien2"></div>
-  <div id="clavien3"></div>
-  <div id="clavien4"></div>
-  <div id="clavien5"></div>
-</div>
-
-<div id="chart-wrapper">
-  <canvas id="clavienChart"></canvas>
-</div>
-
-<!--<canvas id="myChart" width="400" height="400"></canvas>-->
-
-<!-- Link to the external JavaScript file -->
-
-<script src="script.js"></script>
-
-
+  <h1>Kalkulator oceny ryzyka wysapienia powiklan po cystektomii radykalnej z asysta robota</h1>
+  <label for="ucs-input">Odprowadzenie moczu:</label>
+  <select type="number" id="ucs-input">
+    <option value=1>Ureterocutaneostomia</option>
+    <option value=0>Inne</option>
+  </select>
+  <br>
+  <label for="hgb-input">Hemoglobina poczatkowa (5-20):</label>
+  <input type="number" id="hgb-input" min="5" max="20" value="10">
+  <br>
+  <label for="cci-input">Wynik CCI (0-37):</label>
+  <input type="number" id="cci-input" min="0" max="37" value="3">
+  <br>
+  <br>
+  <button onclick="drawChart()">Oceń prawdopodobienstwo</button>
+  <br>
+  <br>
+  <div id="resulted-block" style="display: none;">
+    <h2 id="header">Dla podanego pacjenta, prawdopodobienstwo wystapienia powiklan wynosi:</h2>
+    <div id="clavien1"></div>
+    <div id="clavien2"></div>
+    <div id="clavien3"></div>
+    <div id="clavien4"></div>
+    <div id="clavien5"></div>
+  </div>
+  <br>
+  <br>
+  <div id="chart-wrapper">
+    <canvas id="clavienChart"></canvas>
+  </div>
 </body>
+
 </html>

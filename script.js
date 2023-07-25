@@ -39,7 +39,8 @@ function drawChart() {
     }
   });
 
-  document.querySelector("#header").innerHTML = 'Dla podanego pacjenta, prawdopodobienstwo wystapienia powiklan wynosi:';
+  //document.querySelector("#header").innerHTML = 'Dla podanego pacjenta, prawdopodobienstwo wystapienia powiklan wynosi:';
+  document.getElementById("resulted-block").style.display = "block";
   document.querySelector("#clavien1").innerHTML = 'Clavien Dindo 1 = ' + probs[0] + '%';
   document.querySelector("#clavien2").innerHTML = 'Clavien Dindo 2 = ' + probs[1] + '%';
   document.querySelector("#clavien3").innerHTML = 'Clavien Dindo 3 = ' + probs[2] + '%';
