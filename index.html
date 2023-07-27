@@ -20,21 +20,25 @@
 <body>
   <h1>Kalkulator oceny ryzyka wysapienia powiklan po cystektomii radykalnej z asysta robota</h1>
   <label for="ucs-input">Odprowadzenie moczu:</label>
-  <select type="number" id="ucs-input">
+  <select id="ucs-input" type="number">
+    <option disabled selected value></option>
     <option value=1>Ureterocutaneostomia</option>
     <option value=0>Wstawka jelitowa oraz kolejny zbiornik jelitowy</option>
   </select>
   <br>
-  <label for="hgb-input">Hemoglobina poczatkowa (5-20):</label>
-  <input type="number" id="hgb-input" min="5" max="20" value="10">
+  <label for="hgb-input">Hemoglobina poczatkowa:</label>
+  <input id="hgb-input" type="number" min="5" max="20" placeholder="5-20"><label id="hgb-error-label" style="color:#ce1616; font-weight:bold"></label>
   <br>
-  <label for="cci-input">Wynik CCI (0-37):</label>
-  <input type="number" id="cci-input" min="0" max="37" value="3">
-  <br>
-  <br>
-  <button onclick="drawChart()">Oceń prawdopodobienstwo</button>
+  <label for="cci-input">Wynik CCI:</label>
+  <input id="cci-input" type="number" min="0" max="37" placeholder="0-37"><label id="cci-error-label" style="color:#ce1616; font-weight:bold"></label>
   <br>
   <br>
+  <button id="submitButton" disabled onclick="drawChart()">Oceń prawdopodobienstwo</button>
+  <br>
+  <br>
+
+  <script src="buttonEnabler.js"></script>
+
   <div id="resulted-block" style="display: none;">
     <h2 id="header">Dla podanego pacjenta, prawdopodobienstwo wystapienia powiklan wynosi:</h2>
     <div id="clavien1"></div>
