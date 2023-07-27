@@ -27,10 +27,10 @@
   </select>
   <br>
   <label for="hgb-input">Hemoglobina poczatkowa:</label>
-  <input id="hgb-input" type="number" min="5" max="20" placeholder="5-20">
+  <input id="hgb-input" type="number" min="5" max="20" placeholder="5-20"><label id="hgb-error-label" style="color:#ce1616; font-weight:bold"></label>
   <br>
   <label for="cci-input">Wynik CCI:</label>
-  <input id="cci-input" type="number" min="0" max="37" pattern="[0-9]*" placeholder="0-37">
+  <input id="cci-input" type="number" min="0" max="37" placeholder="0-37"><label id="cci-error-label" style="color:#ce1616; font-weight:bold"></label>
   <br>
   <br>
   <button id="submitButton" disabled onclick="drawChart()">Oceń prawdopodobienstwo</button>
